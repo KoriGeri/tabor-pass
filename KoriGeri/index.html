@@ -6,19 +6,19 @@
     window.onload = function() {
       const now = new Date();
 
-      // Tőzsde időintervallum: 2025-06-12 17:30–17:45
-      const startTime = new Date("2025-06-12T20:35:00");
-      const endTime = new Date("2025-06-12T20:45:00");
+      // Megadott időintervallum
+      const startTime = new Date("2025-06-12T20:50:00");
+      const endTime = new Date("2025-06-12T20:55:00");
 
       // Linkek
       const spreadsheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSF1L613-OiXrUGwQhPMm3QIvByfJr0XffU311EbFUy1m0m2K-OmvIWJS5Ews6PvYKt7fJggo3BhzAw/pubhtml?gid=3699439&single=true";
-      const websiteUrl = "https://sites.google.com/view/iii-turnus1-4-7/korigeri?usp=sharing";
+      const websiteUrl = "https://sites.google.com/view/iii-turnus1-4-7/korigeri";
 
       // Átirányítás
       if (now >= startTime && now <= endTime) {
-        window.location.href = spreadsheetUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
+        window.location.href = spreadsheetUrl + "&t=" + new Date().getTime(); // cache elkerülése
       } else {
-        window.location.href = websiteUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
+        window.location.href = websiteUrl + "&t=" + new Date().getTime(); // cache elkerülése
       }
     }
   </script>
