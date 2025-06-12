@@ -7,23 +7,25 @@
       const now = new Date();
 
       // Megadott időintervallum
-      const startTime = new Date("2025-06-12T20:50:00");
-      const endTime = new Date("2025-06-12T20:55:00");
+      const startTime = new Date("2025-06-12T21:05:00");
+      const endTime = new Date("2025-06-12T21:15:00");
+
+      const container = document.getElementById("content");
 
       // Linkek
-      const spreadsheetUrl = "<iframe src="https://docs.google.com/spreadsheets/d/1QMw8R2Uzp_D28vckJap2N2nrQxZiII8FP842XiJ7tK0/view?usp=sharing" width="100%" height="600px"></iframe>";
+      const spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1QMw8R2Uzp_D28vckJap2N2nrQxZiII8FP842XiJ7tK0/view?usp=sharing";
       const websiteUrl = "https://sites.google.com/view/iii-turnus1-4-7/korigeri";
 
-      // Átirányítás
       if (now >= startTime && now <= endTime) {
-        window.location.href = spreadsheetUrl + "&t=" + new Date().getTime(); // cache elkerülése
+        container.innerHTML = `<iframe src="${spreadsheetUrl}" width="100%" height="600" frameborder="0"></iframe>`;
       } else {
-        window.location.href = websiteUrl + "&t=" + new Date().getTime(); // cache elkerülése
+        container.innerHTML = `<iframe src="${websiteUrl}" width="100%" height="600" frameborder="0"></iframe>`;
       }
     }
   </script>
 </head>
 <body>
-  <p>Átirányítás folyamatban...</p>
+  <p>Az oldal betöltése...</p>
+  <div id="content"></div>
 </body>
 </html>
