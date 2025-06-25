@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KoriGeri Tábor Pass</title>
+  <title>Tábor Pass</title>
   <script>
     window.onload = function() {
       const now = new Date();
-      const startTime = new Date("2025-06-22T21:22:35");
-      const endTime = new Date("2025-06-22T23:15:00");
 
-      // Google Spreadsheet link (akár személyre szabva)
-      const spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1QMw8R2Uzp_D28vckJap2N2nrQxZiII8FP842XiJ7tK0/edit?usp=drivesdk";
+      // Tőzsde időintervallum: 2025-06-12 17:30–17:45
+      const startTime = new Date("2025-06-12T20:35:00");
+      const endTime = new Date("2025-06-12T20:45:00");
 
-      // Google Sites aloldal, beágyazva
-      const websiteUrl = "https://sites.google.com/view/iii-turnus1-4-7/korigeri";
+      // Linkek
+      const spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1QMw8R2Uzp_D28vckJap2N2nrQxZiII8FP842XiJ7tK0/view?gid=0#gid=0";
+      const websiteUrl = "https://korigeri.github.io/tabor-pass/KoriGeri";
 
+      // Átirányítás
       if (now >= startTime && now <= endTime) {
-        // Átirányítás a Google Spreadsheetre
-        window.location.href = spreadsheetUrl;
+        window.location.href = spreadsheetUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
       } else {
-        // Normál esetben a Google Sites oldal beágyazása
-        document.getElementById("content").innerHTML = `<iframe src="${websiteUrl}" width="100%" height="600" frameborder="0"></iframe>`;
+        window.location.href = websiteUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
       }
     }
   </script>
 </head>
 <body>
-  <h2>KoriGeri Tábor Pass</h2>
-  <div id="content">Az oldal betöltése folyamatban...</div>
+  <p>Átirányítás folyamatban...</p>
 </body>
 </html>
