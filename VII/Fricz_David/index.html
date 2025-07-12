@@ -1,1 +1,30 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tábor Pass</title>
+  <script>
+    window.onload = function() {
+      const now = new Date();
+
+      // Tőzsde időintervallum: 2025-06-12 17:30–17:45
+      const startTime = new Date("2025-07-01T14:40:00");
+      const endTime = new Date("2025-07-01T15:45:00");
+
+      // Linkek
+      const spreadsheetUrl = "https://docs.google.com/spreadsheets/d/15edDYUpMkuwFskWTTzmLXt05gjvWg1iuoqlVXS0_nsk/edit?usp=sharing";
+      const websiteUrl = "https://sites.google.com/view/iii-turnus1-4-7/vii-csoport/vii-fricz-d%C3%A1vid";
+
+      // Átirányítás
+      if (now >= startTime && now <= endTime) {
+        window.location.href = spreadsheetUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
+      } else {
+        window.location.href = websiteUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Átirányítás folyamatban...</p>
+</body>
+</html>
