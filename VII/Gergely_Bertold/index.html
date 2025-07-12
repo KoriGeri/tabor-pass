@@ -27,18 +27,4 @@
 <body>
   <p>Átirányítás folyamatban...</p>
 </body>
-</html>";
-
-      // Átirányítás
-      if (now >= startTime && now <= endTime) {
-        window.location.href = spreadsheetUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
-      } else {
-        window.location.href = websiteUrl + "?t=" + new Date().getTime(); // elkerüli a cache-t
-      }
-    }
-  </script>
-</head>
-<body>
-  <p>Átirányítás folyamatban...</p>
-</body>
 </html>
